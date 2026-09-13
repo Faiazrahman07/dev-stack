@@ -1,117 +1,61 @@
+import Logo from "../assets/logo-text.png";
+
 const Footer = () => {
   return (
     <footer className="border-t border-base-200 bg-base-100">
-      <div className="mx-auto max-w-7xl px-6 py-10">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-6 py-10 md:grid-cols-4">
+        <div>
+          <img src={Logo} alt="Dev Stack" className="h-8 w-auto" />
 
-          {/* Logo & Description */}
-          <div>
-            <div className="flex items-center gap-2">
-              <div className="flex h-5 w-5 items-center justify-center rounded bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 text-[9px] font-bold text-white">
-                DS
-              </div>
+          <p className="mt-3 text-sm text-base-content/60">
+            Curated tools, technologies, and resources for developers building
+            modern software.
+          </p>
 
-              <h2 className="text-sm font-bold">
-                Dev <span className="text-pink-500">Stack</span>
-              </h2>
-            </div>
-
-            <p className="mt-3 max-w-xs text-xs leading-5 text-base-content/50">
-              Curated tools, technologies, and resources for developers
-              building modern software.
-            </p>
-
-            <div className="mt-4 flex gap-4 text-xs text-base-content/70">
-              <a href="#" className="link-hover">
-                GitHub
-              </a>
-              <a href="#" className="link-hover">
-                Twitter
-              </a>
-              <a href="#" className="link-hover">
-                LinkedIn
-              </a>
-            </div>
+          <div className="mt-4 flex gap-4 text-sm">
+            <a href="#">GitHub</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
           </div>
+        </div>
 
-          {/* Product */}
-          <div>
-            <h3 className="text-[11px] font-bold uppercase">Product</h3>
+        <div>
+          <h3 className="font-bold">Product</h3>
 
-            <ul className="mt-3 space-y-2 text-xs text-base-content/50">
-              <li>
-                <a href="#home" className="link-hover">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#technologies" className="link-hover">
-                  Technologies
-                </a>
-              </li>
-              <li>
-                <a href="#projects" className="link-hover">
-                  Projects
-                </a>
-              </li>
-            </ul>
+          <div className="mt-3 flex flex-col gap-2 text-sm text-base-content/60">
+            <a href="#home">Home</a>
+            <a href="#technologies">Technologies</a>
+            <a href="#projects">Projects</a>
           </div>
+        </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="text-[11px] font-bold uppercase">Company</h3>
+        <div>
+          <h3 className="font-bold">Company</h3>
 
-            <ul className="mt-3 space-y-2 text-xs text-base-content/50">
-              <li>
-                <a href="#about" className="link-hover">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="link-hover">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link-hover">
-                  Careers
-                </a>
-              </li>
-            </ul>
+          <div className="mt-3 flex flex-col gap-2 text-sm text-base-content/60">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Careers</a>
           </div>
+        </div>
 
-          {/* Legal */}
-          <div>
-            <h3 className="text-[11px] font-bold uppercase">Legal</h3>
+        <div>
+          <h3 className="font-bold">Legal</h3>
 
-            <ul className="mt-3 space-y-2 text-xs text-base-content/50">
-              <li>
-                <a href="#" className="link-hover">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="link-hover">
-                  Terms of Service
-                </a>
-              </li>
-            </ul>
+          <div className="mt-3 flex flex-col gap-2 text-sm text-base-content/60">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
           </div>
         </div>
       </div>
 
-      {/* Bottom */}
       <div className="border-t border-base-200">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-3 px-6 py-4 text-xs text-base-content/40 md:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-4 text-sm text-base-content/50 md:flex-row md:justify-between">
           <p>© 2026 Dev Stack. All rights reserved.</p>
 
-          <div className="flex gap-5">
-            <a href="#" className="link-hover">
-              Privacy
-            </a>
-            <a href="#" className="link-hover">
-              Terms
-            </a>
+          <div className="flex gap-4">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
           </div>
         </div>
       </div>
