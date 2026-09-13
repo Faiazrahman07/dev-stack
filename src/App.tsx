@@ -3,6 +3,7 @@ import Navbar from "./Components/navbar";
 import Banner from "./Components/Banner";
 import TechnologyCard from "./Components/TechnologyCard";
 import type { Technology } from "./types/technology";
+import Footer from "./Components/footer";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -79,7 +80,7 @@ function App() {
           </div>
         }
       >
-
+    
         <TechnologyCard
           technologyPromise={technologyPromise}
           selectedTechnologies={selectedTechnologies}
@@ -90,6 +91,7 @@ function App() {
 
       </Suspense>
 
+    <Footer></Footer>
 
       <ToastContainer
         position="top-right"
