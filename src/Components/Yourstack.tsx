@@ -26,11 +26,11 @@ const YourStack = ({
   };
 
   return (
-    <aside className="card h-fit border border-base-200 bg-base-100 shadow-md lg:sticky lg:top-24">
-
+    <aside className="card h-fit border border-base-200 bg-base-100 shadow-sm lg:sticky lg:top-24">
       <div className="card-body p-5">
 
-        <div className="flex items-start justify-between gap-3">
+     
+        <div className="flex items-center justify-between">
           <div>
             <h2 className="card-title text-lg">
               Your Stack
@@ -55,25 +55,25 @@ const YourStack = ({
           </button>
         </div>
 
+       
         {selectedTechnologies.length === 0 ? (
-          <div className="alert mt-4 bg-base-200">
-            <div>
-              <p className="font-medium">
-                Your stack is empty.
-              </p>
+          <div className="mt-4 rounded-lg bg-base-200 p-4">
+            <p className="text-sm font-medium">
+              Your stack is empty.
+            </p>
 
-              <p className="text-xs text-base-content/50">
-                Add technologies to build your stack.
-              </p>
-            </div>
+            <p className="mt-1 text-xs text-base-content/50">
+              Add technologies to build your stack.
+            </p>
           </div>
         ) : (
 
+       
           <div className="mt-4 space-y-3">
             {selectedTechnologies.map((tech) => (
               <div
                 key={tech.id}
-                className="flex items-center gap-3 rounded-xl border border-base-200 p-3"
+                className="flex items-center gap-3 rounded-lg border border-base-200 p-3"
               >
 
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-base-200">
