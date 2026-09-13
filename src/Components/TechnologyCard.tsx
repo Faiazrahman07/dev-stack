@@ -36,8 +36,7 @@ const TechnologyCard = ({
         </h2>
 
         <p className="mt-2 text-sm text-base-content/60 md:text-base">
-          Pick technologies from different categories to build your ideal
-          development stack.
+         Pick one technology per category to build your ideal stack.
         </p>
       </div>
 

@@ -33,6 +33,52 @@ const TechnologyList = ({
           (item) => item.id === tech.id
         );
 
+        let badgeColor = "bg-base-200 text-base-content";
+
+        if (tech.badge === "Popular") {
+          badgeColor = "bg-sky-50 text-sky-500";
+        }
+
+        if (tech.badge === "Versatile") {
+          badgeColor = "bg-emerald-50 text-emerald-600";
+        }
+
+        if (tech.badge === "Fast") {
+          badgeColor = "bg-orange-50 text-orange-500";
+        }
+
+        if (tech.badge === "Standard") {
+          badgeColor = "bg-emerald-50 text-emerald-600";
+        }
+
+        if (tech.badge === "Top SQL") {
+          badgeColor = "bg-blue-50 text-blue-500";
+        }
+
+        if (tech.badge === "Cache") {
+          badgeColor = "bg-red-50 text-red-500";
+        }
+
+        if (tech.badge === "Ubiquitous") {
+          badgeColor = "bg-amber-50 text-amber-600";
+        }
+
+        if (tech.badge === "Essential") {
+          badgeColor = "bg-sky-50 text-sky-500";
+        }
+
+        if (tech.badge === "Robust") {
+          badgeColor = "bg-blue-50 text-blue-500";
+        }
+
+        if (tech.badge === "Modern") {
+          badgeColor = "bg-cyan-50 text-cyan-500";
+        }
+
+        if (tech.badge === "Containers") {
+          badgeColor = "bg-sky-50 text-sky-500";
+        }
+
         return (
           <div
             key={tech.id}
@@ -48,7 +94,7 @@ const TechnologyList = ({
                   />
                 </div>
 
-                <span className="badge badge-secondary badge-sm">
+                <span className={`badge badge-sm border-0 ${badgeColor}`}>
                   {tech.badge}
                 </span>
               </div>
@@ -59,14 +105,12 @@ const TechnologyList = ({
                 {tech.description}
               </p>
 
-              <div className="mt-2 flex items-center gap-2 text-sm">
+              <div className="mt-4 flex items-center gap-2 border-t border-base-200 pt-4 text-sm">
                 <span className="badge badge-ghost badge-sm">
                   {tech.category}
                 </span>
 
-                <span className="badge badge-outline badge-sm">
-                  {tech.difficulty}
-                </span>
+                <span>{tech.difficulty}</span>
 
                 <span className="ml-auto">
                   ⭐ {tech.rating}

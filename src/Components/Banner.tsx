@@ -15,9 +15,10 @@ const Banner = () => {
           </h1>
 
           <p className="mt-6 max-w-xl text-gray-600">
-            Explore frontend, backend, database, and tooling options,
+            Explore frontend, backend, database, and tooling options,<br/>
             compare them side by side, and put together the stack that
-            fits your next project.
+            fits your <br/>
+            next project.
           </p>
 
           <div className="mt-8 flex gap-3">
