@@ -29,7 +29,6 @@ const TechnologyList = ({
 
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-
       {technologies.map((tech) => {
         const isAdded = selectedTechnologies.some(
           (item) => item.id === tech.id
@@ -38,7 +37,7 @@ const TechnologyList = ({
         return (
           <div
             key={tech.id}
-            className="card border border-base-200 bg-base-100 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="card border border-base-200 bg-base-100 shadow-sm"
           >
             <div className="card-body p-5">
 
@@ -86,7 +85,7 @@ const TechnologyList = ({
                   className={`btn btn-sm w-full border-0 text-white ${
                     isAdded
                       ? "btn-disabled"
-                      : "bg-linear-to-r from-orange-500 via-pink-500 to-violet-600"
+                      : "bg-black hover:bg-gray-800"
                   }`}
                 >
                   {isAdded
@@ -99,7 +98,6 @@ const TechnologyList = ({
           </div>
         );
       })}
-
     </div>
   );
 };
