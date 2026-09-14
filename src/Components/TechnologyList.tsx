@@ -22,6 +22,17 @@ const TechnologyList = ({
       return;
     }
 
+    const sameCategory = selectedTechnologies.some(
+      (item) => item.category === tech.category
+    );
+
+    if (sameCategory) {
+      toast.warning(
+        `You already selected a ${tech.category} technology!`
+      );
+      return;
+    }
+
     onAddToStack(tech);
     toast.success(`${tech.name} added to your stack!`);
   };
@@ -94,21 +105,23 @@ const TechnologyList = ({
                   />
                 </div>
 
-                <span className={`badge badge-sm border-0 ${badgeColor}`}>
+                <span
+                  className={`badge badge-sm border-0 ${badgeColor}`}
+                >
                   {tech.badge}
                 </span>
               </div>
 
-              <h2 className="card-title mt-3 text-lg">{tech.name}</h2>
+              <h2 className="card-title mt-3 text-lg">
+                {tech.name}
+              </h2>
 
               <p className="text-sm text-base-content/60">
                 {tech.description}
               </p>
 
               <div className="mt-4 flex items-center gap-2 border-t border-base-200 pt-4 text-sm">
-                <span className="badge badge-ghost badge-sm">
-                  {tech.category}
-                </span>
+                <span>{tech.category}</span>
 
                 <span>{tech.difficulty}</span>
 
@@ -128,7 +141,9 @@ const TechnologyList = ({
                       : "bg-black hover:bg-gray-800"
                   }`}
                 >
-                  {isAdded ? "✓ Added to Stack" : "Add to Stack"}
+                  {isAdded
+                    ? "✓ Added to Stack"
+                    : "Add to Stack"}
                 </button>
               </div>
             </div>

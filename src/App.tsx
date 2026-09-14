@@ -8,7 +8,6 @@ import Footer from "./Components/footer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const getTechnologies = async (): Promise<Technology[]> => {
   const response = await fetch("/data.json");
 
@@ -17,27 +16,25 @@ const getTechnologies = async (): Promise<Technology[]> => {
   }
 
   const data: Technology[] = await response.json();
-
   return data;
 };
 
-
 const technologyPromise = getTechnologies();
 
-
 function App() {
-
   const [selectedTechnologies, setSelectedTechnologies] =
     useState<Technology[]>([]);
 
-
   const handleAddToStack = (tech: Technology) => {
-
     const alreadyAdded = selectedTechnologies.some(
       (item) => item.id === tech.id
     );
 
-    if (alreadyAdded) return;
+    const sameCategory = selectedTechnologies.some(
+      (item) => item.category === tech.category
+    );
+
+    if (alreadyAdded || sameCategory) return;
 
     setSelectedTechnologies((previous) => [
       ...previous,
@@ -45,22 +42,18 @@ function App() {
     ]);
   };
 
-
   const handleRemove = (id: string) => {
     setSelectedTechnologies((previous) =>
       previous.filter((tech) => tech.id !== id)
     );
   };
 
-
   const handleRemoveAll = () => {
     setSelectedTechnologies([]);
   };
 
-
   return (
     <div className="min-h-screen bg-base-100">
-
       <Navbar />
 
       <Banner />
@@ -69,18 +62,15 @@ function App() {
         fallback={
           <div className="flex min-h-96 items-center justify-center">
             <div className="flex flex-col items-center gap-4">
-
               <span className="loading loading-spinner loading-lg"></span>
 
               <p className="text-sm text-base-content/60">
                 Loading technologies...
               </p>
-
             </div>
           </div>
         }
       >
-    
         <TechnologyCard
           technologyPromise={technologyPromise}
           selectedTechnologies={selectedTechnologies}
@@ -88,10 +78,9 @@ function App() {
           onRemove={handleRemove}
           onRemoveAll={handleRemoveAll}
         />
-
       </Suspense>
 
-    <Footer></Footer>
+      <Footer />
 
       <ToastContainer
         position="top-right"
@@ -103,7 +92,6 @@ function App() {
         pauseOnHover
         theme="light"
       />
-
     </div>
   );
 }
